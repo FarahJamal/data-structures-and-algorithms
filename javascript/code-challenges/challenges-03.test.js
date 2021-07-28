@@ -47,7 +47,6 @@ const containsAnd = (arr) => {
   });
   return strings;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -57,7 +56,14 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+
+  let odds = arr.filter((element) => {
+    if (element%2===1) {
+      return true;
+    }
+  });
+  return odds;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,8 +75,15 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let notInArray = arr.filter((element) => {
+    if (!forbiddenValues.includes(element)) {
+      return true;
+    }
+  });
+  return notInArray;
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -112,7 +125,12 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let baseStatG = arr.filter((element) => {
+    if (element.baseStat>minBaseStat) {
+          return true;
+    }
+  });
+  return baseStatG;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,8 +142,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
-};
+  let arr2=[]
+  let baseStatG = arr.filter((element) => {
+    if (element.baseStat>minBaseStat) {
+      arr2.push(element.stat.name);
+          return true;
+    }
+  });
+  return arr2;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -177,7 +201,14 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  let arr2=[]
+  arr.filter((element) => {
+    if (!(element.hasOwnProperty('children'))) {
+      arr2.push(element);
+          return true;
+    }
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,7 +220,23 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  let finalArr=[];
+let arr2=arr.filter((element) =>{
+  if(typeof(element)==='number'){
+      return true;
+      }
+
+});
+arr2.map((element2)=>{
+if(element2%2==0){
+finalArr.push("even");
+}
+else{
+  finalArr.push("odd");
+
+}
+});
+return finalArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
