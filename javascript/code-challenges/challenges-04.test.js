@@ -91,7 +91,8 @@ return arr;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
+Write a function named sortByPrice that takes in an array of objects,
+ each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -157,7 +158,9 @@ const sortNumbersByLength = (arr) => {
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named sortPeople that takes in an array of Person objects, each of which has firstName, lastName, and age properties, and sorts those people by their last names. Do not worry about capitalization or first names.
+Write a function named sortPeople that takes in an array of Person objects, 
+each of which has firstName, lastName, and age properties, and sorts those people by their last names.
+ Do not worry about capitalization or first names.
 ------------------------------------------------------------------------------------------------ */
 
 function Person(firstName, lastName, age) {

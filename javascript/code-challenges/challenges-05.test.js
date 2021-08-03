@@ -77,7 +77,8 @@ const countNumberOfElements = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
+Write a function named returnNames that, given the Star Wars data, 
+below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
 let starWarsData = [{
@@ -152,7 +153,8 @@ const reversedString = (str) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
+Write a function named countNumberOfChildren that, given the array of characters, 
+below, uses reduce to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
