@@ -8,7 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  console.log(str.split('').splice(-10));
+  return str.split('').splice(-10);
 
 }
 
@@ -52,7 +52,6 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => {
   const totalSum = (matrix) => {
     let sum=0;
     for(let i=0;i<matrix.length;i++){
@@ -61,7 +60,6 @@ const totalSum = (matrix) => {
       }
     }
     return sum;
-    };
     };
 
 
@@ -91,7 +89,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  totalPerHour = 0;
+  let totalPerHour = 0;
   let tot = [];
   for (let e = 0; e < hoursOpen.length; e++) {
     totalPerHour = 0;
@@ -117,7 +115,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   let arr=[];
-let y=hours.forEach((e,i)=>{
+let y=data.forEach((e,i)=>{
     arr.push({sales: e+' cookies', time: hours[i]});
 
 })
@@ -325,7 +323,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
@@ -344,7 +342,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
