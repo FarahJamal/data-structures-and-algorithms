@@ -207,7 +207,8 @@ CHALLENGE 9 - Stretch Goal
 
 Write a function named averageDailyTemperature that accepts a two-dimensional array representing average daily temperatures grouped week-by-week.
 
-Calculate the average daily temperature during that entire period. Your output should be a single number. Write your function so it could accept an array with any number of weeks given to it.
+Calculate the average daily temperature during that entire period. 
+Your output should be a single number. Write your function so it could accept an array with any number of weeks given to it.
 ------------------------------------------------------------------------------------------------ */
 
 // Real daily average temperatures for Seattle, October 1-28 2017
@@ -219,7 +220,15 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let sum=0;
+  let length2=0;
+for(let i=0;i<weather.length;i++){
+  for(let j=0;j<weather[i].length;j++){
+sum=sum+weather[i][j];
+length2=weather[i].length*weather.length;
+  }
+}
+return sum/length2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,7 +238,8 @@ Write a function named lowestWeeklyAverage that accepts a two-dimensional array 
 
 Calculate the average temperature for each week and return the value of the lowest weekly average temperature.
 
-For example, in the data set below, the lowest weekly average is 46, which is the average of the temperatures in week 2. All other weeks have average temperatures that are greater than 46.
+For example, in the data set below, the lowest weekly average is 46, which is the average of the temperatures in week 2. 
+All other weeks have average temperatures that are greater than 46.
 ------------------------------------------------------------------------------------------------ */
 
 let lowestWeeklyTemperatureData = [
@@ -240,7 +250,17 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let weekAvg=[];
+  let total=[];
+  let length=0;
+
+  for (let i = 0; i < weather.length; i++) {
+    weekAvg.push(weather[i].reduce((a, b) => (a + b), 0));
+    length=weather[i].length;
+    total.push(weekAvg[i]/length);
+
+  }
+  return Math.min.apply(null,total);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -256,7 +276,8 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  return str.split('\n').map(rowString => rowString.split(',').reduce((sum, num) => Number(sum) + Number(num)));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -268,7 +289,7 @@ DO NOT CHANGE any of the below code.
 
 Run your tests from the console: jest challenge-12.test.js
 
------------------------------------------------------------------------------------------------- */
+3------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
   test('it should return the last 10 characters of a string as an array', () => {
@@ -355,20 +376,20 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should calculate and return the average temperature of the data set', () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the lowest weekly average temperature within the data set', () => {
     expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
     expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the total count for each row', () => {
     let result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
